@@ -1,0 +1,5 @@
+nmap -T5 -A  X.X.X.X
+nmap -T5 -A -Pn X.X.X.X
+nmap -T5 -A -p- X.X.X.X
+proxychains nmap -sT -p 3389 X.X.X.X
+proxychains nmap -sT -p 22,80,3389 X.X.X.X
