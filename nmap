@@ -3,3 +3,8 @@ nmap -T5 -A -Pn X.X.X.X
 nmap -T5 -A -p- X.X.X.X
 proxychains nmap -sT -p 3389 X.X.X.X
 proxychains nmap -sT -p 22,80,3389 X.X.X.X
+
+網頁路徑dirsearch
+git clone https://github.com/maurosoria/dirsearch
+需要python3    
+python3 dirsearch.py -u "http://x.x.x.x/" -e *
