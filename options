@@ -18,3 +18,4 @@ type "C:\Documents and Settings\Administrator\Desktop\proof.txt"
 cat /root/proof.txt
 ifconfig沒反應....用 ifconfig-a
 
+#git clone https://github.com/maurosoria/dirsearch
