@@ -1,3 +1,4 @@
+多掃幾次or重連線
 nmap -T5 -A  X.X.X.X
 nmap -T5 -A -Pn X.X.X.X
 nmap -T5 -A -p- X.X.X.X
